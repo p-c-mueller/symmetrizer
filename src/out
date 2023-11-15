@@ -1,0 +1,46 @@
+34a35
+> //added by RN for basis-recommendation functions to help users choosing basis functions
+14d13
+< #include <boost/make_shared.hpp>
+157c156,157
+< 	bool cont = true;
+---
+> //#pragma omp parallel
+> 	{
+159c159
+< //#pragma omp parallel for shared (bools, other, cont)
+---
+> //#pragma omp for
+162d161
+< 		if ( cont ) continue;
+173,175c172
+< 		
+< //		if ( bools( atomA->getIndex() ) != 0 )
+< //			cont = false;
+---
+> 	}
+228c225,226
+< //#pragma omp parallel
+---
+> 
+> #pragma omp parallel
+230c228
+< //#pragma omp for
+---
+> #pragma omp for
+240c238
+< //#pragma omp critical
+---
+> #pragma omp critical
+421a420
+> //#pragma omp for
+51c51
+< 	void addAtomToName(int i, vector<pair<string,int> >& elements);
+---
+> 	void addAtomToName(int i, vector<pair<string,int>>& elements);
+346a347
+> 
+362a364
+> 
+15d14
+< #include <boost/make_shared.hpp>
